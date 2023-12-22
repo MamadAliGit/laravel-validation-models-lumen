@@ -12,13 +12,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require mamadali/laravel-validation-models "0.1"
+composer require mamadali/laravel-validation-models "~1.0"
 ```
 
 or add
 
 ```)
-"mamadali/laravel-validation-models": "0.1"
+"mamadali/laravel-validation-models": "~1.0"
 ```
 
 to the "require" section of your `composer.json` file.
