@@ -1,5 +1,5 @@
 {
-    "name": "mamadali/laravel-validation-models",
+    "name": "mamadali/laravel-validation-models-lumen",
     "description": "Helps you easily validate your models and eloquent models with specific scenarios and use them in api",
     "autoload": {
         "psr-4": {
