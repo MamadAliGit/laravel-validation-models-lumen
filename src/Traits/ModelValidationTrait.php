@@ -184,12 +184,16 @@ trait ModelValidationTrait
         }
 
         //inline validators
-        foreach ($this->getModelAttributes() as $key => $value) {
-            $validator = 'validate' . ucfirst($key);
-            if (!method_exists($this, $validator)) {
-                continue;
+        if(!$this->hasErrors()){
+            foreach ($this->getModelAttributes() as $key => $value) {
+                if($this->getScenario() === null || in_array($key, $this->scenarios()[$this->getScenario()] ?? [])) {
+                    $validator = 'validate' . ucfirst($key);
+                    if (!method_exists($this, $validator)) {
+                        continue;
+                    }
+                    $this->$validator($key, $value, $options, $this->getScenario());
+                }
             }
-            $this->$validator($key, $value, $options, $this->getScenario());
         }
 
         $this->afterValidate();
